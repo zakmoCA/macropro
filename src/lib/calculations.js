@@ -1,17 +1,19 @@
-export function determineDominance(relevantInput) {
-  const recommendedDominance = null
+import { calculateMifflinStJeorBMR } from './formulae.js'
 
-  return recommendedDominance
+export function calculateBMR(userInput) {
+  const { age, sex, height, weight } = userInput
+  const mifflinStJeorBMR = calculateMifflinStJeorBMR(weight, height, age, sex === 'male')
+  return mifflinStJeorBMR
 }
 
-export function determineMacroSplit(relevantInput) {
-  const recommendedMacroSplit = null 
-
-  return recommendedMacroSplit
+export function calculateMacroSplit(...args) {
+  //
 }
 
-export function determineMacros(relevantInput) {
-  const recommendedMacros = null
+export function calculateMacroDominance(...args) {
+  // 
+}
 
-  return recommendedMacros
+export function calculateActualMacros(...args) {
+  // 
 }
