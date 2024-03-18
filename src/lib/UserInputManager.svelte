@@ -38,6 +38,7 @@
     }
 
     dispatch('userInputSubmitted', userInput)
+    console.log(userInput)
   }
 </script>
 
