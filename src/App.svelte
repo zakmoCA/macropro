@@ -19,8 +19,8 @@
 </main>
 
 <style>
-    .question-container {
-      width: 60vw;
-      height: 60vh;
-    }
+  .question-container {
+    width: 60vw;
+    height: 60vh;
+  }
 </style>
