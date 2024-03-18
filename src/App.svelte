@@ -1,10 +1,10 @@
 <script>
-  import QuestionAnswer from "./lib/QuestionAnswer.svelte"
+  import UserInputManager from "./lib/UserInputManager.svelte"
 </script>
 
 <main>
   <div class="question-container">
-    <QuestionAnswer />
+    <UserInputManager />
   </div>
 </main>
 
