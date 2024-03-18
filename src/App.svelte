@@ -20,7 +20,6 @@
 
 <style>
     .question-container {
-      border: 1px solid red;
       width: 60vw;
       height: 60vh;
     }
