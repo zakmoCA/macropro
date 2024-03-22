@@ -6,14 +6,17 @@ export function calculateBMR(userInput) {
   return mifflinStJeorBMR
 }
 
-export function calculateMacroSplit(...args) {
+// ⬇️TODO after research
+
+export function calculateMacroSplit(userInput) {
+  // start with 40/40/20 for typical user
+  // as i refine my algo based on research extract functions
+}
+
+export function calculateMacroDominance(userInput) {
+  // 
+}
+
+export function calculateActualMacros(userInput) {
   //
-}
-
-export function calculateMacroDominance(...args) {
-  // 
-}
-
-export function calculateActualMacros(...args) {
-  // 
 }

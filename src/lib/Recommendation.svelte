@@ -10,13 +10,16 @@
 
   $: {
     BMR = calculateBMR(userInput)
-    // macroSplit = calculateMacroSplit()
-    // macroDominance = calculateMacroDominance()
-    // actualMacros = calculateActualMacros()
+    // macroSplit = calculateMacroSplit(userInput)
+    // macroDominance = calculateMacroDominance(userInput)
+    // actualMacros = calculateActualMacros(userInput)
   }
 </script>
 
 <div>
   <h2>Your Recommendations</h2>
   <p>Basal Metabolic Rate (BMR): {BMR} calories</p>
+  <!-- <p>Macro Split: {macroSplit}</p>
+  <p>Macro Dominance: {macroDominance}</p>
+  <p>Actual Macros: {actualMacros.protein}g protein, {actualMacros.carbs}g carbs, {actualMacros.fat}g fat</p> -->
 </div>

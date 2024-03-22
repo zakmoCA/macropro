@@ -8,6 +8,8 @@
   let height = ''
   let weight = ''
   let activityLevel = ''
+  let exerciseLevel = ''
+  let exerciseTypeDominance = ''
   let goals = ''
 
   const activityLevels = [
@@ -17,9 +19,19 @@
     { value: 'very_active', label: 'Very Active' },
   ]
 
-  // add exerciseLevels and description differentiating activity-level and exercise-level
+  // UI will need descriptions of these
+  const exerciseLevels = [
+    { value: 'light', label: 'Light' },
+    { value: 'moderate', label: 'Moderate' },
+    { value: 'heavy', label: 'Heavy' },
+  ]
+  // UI will need descriptions
+  const exerciseDominance = [
+    { value: 'strength_training_dominant', label: 'Mostly Strength Training' },
+    { value: 'cardio_or_endurance_dominant', label: 'Mostly Cardio and/or Endurance Sports' },
+    { value: 'hybrid', label: 'Cardio/Endurance and Strength Training heavy (hybrid)' },
+  ]
 
-  // add exerciseDominance (endurance, strength-training, hybrid etc)
 
   const goalOptions = [
     { value: 'lose_weight', label: 'Lose Weight' },
@@ -34,6 +46,8 @@
       height: parseFloat(height),
       weight: parseFloat(weight),
       activityLevel,
+      exerciseLevel,
+      exerciseTypeDominance,
       goals,
     }
 
@@ -73,6 +87,25 @@
       <option value="">Select Activity Level</option>
       {#each activityLevels as level}
         <option value={level.value}>{level.label}</option>
+      {/each}
+    </select>
+  </label>
+
+  <label>
+    Exercise Level:
+    <select bind:value={exerciseLevel} required>
+      <option value="">Select Exercise Level</option>
+      {#each exerciseLevels as level}
+        <option value={level.value}>{level.label}</option>
+      {/each}
+    </select>
+  </label>
+  <label>
+    Exercise Dominance:
+    <select bind:value={exerciseTypeDominance} required>
+      <option value="">Select Exercise Type</option>
+      {#each exerciseDominance as dominance}
+        <option value={dominance.value}>{dominance.label}</option>
       {/each}
     </select>
   </label>
