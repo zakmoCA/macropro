@@ -1,24 +1,24 @@
 <script>
-  import { calculateBMR, calculateMacroSplit, calculateMacroDominance, calculateActualMacros } from './calculations.js'
+  import { calculateBMR, extractActivityLevelMultiplier, totalDailyEnergyExpenditure } from './calculations.js'
 
   export let userInput
 
   let BMR
-  let macroSplit
-  let macroDominance
-  let actualMacros
+  let activityMultiple
+  let TDEE
 
-  $: {
-    BMR = calculateBMR(userInput)
-    // macroSplit = calculateMacroSplit(userInput)
-    // macroDominance = calculateMacroDominance(userInput)
-    // actualMacros = calculateActualMacros(userInput)
-  }
+  BMR = calculateBMR(userInput)
+  activityMultiple = extractActivityLevelMultiplier(userInput)
+  TDEE = totalDailyEnergyExpenditure(BMR, activityMultiple)
+  console.log(BMR)
+  console.log(activityMultiple)
+  console.log(TDEE)
 </script>
 
 <div>
   <h2>Your Recommendations</h2>
   <p>Basal Metabolic Rate (BMR): {BMR} calories</p>
+  <p>Your TDEE is: {TDEE}</p>
   <!-- <p>Macro Split: {macroSplit}</p>
   <p>Macro Dominance: {macroDominance}</p>
   <p>Actual Macros: {actualMacros.protein}g protein, {actualMacros.carbs}g carbs, {actualMacros.fat}g fat</p> -->

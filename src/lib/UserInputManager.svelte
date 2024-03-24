@@ -13,10 +13,11 @@
   let goals = ''
 
   const activityLevels = [
-    { value: 'sedentary', label: 'Sedentary' },
-    { value: 'lightly_active', label: 'Lightly Active' },
-    { value: 'moderately_active', label: 'Moderately Active' },
-    { value: 'very_active', label: 'Very Active' },
+    { value: 'sedentary', label: 'Sedentary', multiplier: 1.2 },
+    { value: 'lightly_active', label: 'Lightly Active', multiplier: 1.375 },
+    { value: 'moderately_active', label: 'Moderately Active', multiplier: 1.55 },
+    { value: 'very_active', label: 'Very Active', multiplier: 1.725 },
+    { value: 'extremely_active', label: 'Extremely Active', multiplier: 1.9 },
   ]
 
   // UI will need descriptions of these
@@ -40,20 +41,24 @@
   ]
 
   function handleSubmit() {
-    const userInput = {
-      age: parseInt(age),
-      sex,
-      height: parseFloat(height),
-      weight: parseFloat(weight),
-      activityLevel,
-      exerciseLevel,
-      exerciseTypeDominance,
-      goals,
-    }
+  const selectedActivityLevel = activityLevels.find(level => level.value === activityLevel)
 
-    dispatch('userInputSubmitted', userInput)
-    console.log(userInput)
+  const userInput = {
+    age: parseInt(age),
+    sex,
+    height: parseFloat(height),
+    weight: parseFloat(weight),
+    activityLevel: selectedActivityLevel,
+    exerciseLevel,
+    exerciseTypeDominance,
+    goals,
   }
+
+  dispatch('userInputSubmitted', userInput)
+  console.log(userInput)
+}
+
+
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>
