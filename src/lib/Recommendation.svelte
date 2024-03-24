@@ -10,9 +10,6 @@
   BMR = calculateBMR(userInput)
   activityMultiple = extractActivityLevelMultiplier(userInput)
   TDEE = totalDailyEnergyExpenditure(BMR, activityMultiple)
-  console.log(BMR)
-  console.log(activityMultiple)
-  console.log(TDEE)
 </script>
 
 <div>
