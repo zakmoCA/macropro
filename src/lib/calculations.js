@@ -54,18 +54,31 @@ export function calculateMacroSplit(userInput) {
   // this is for relatively normal training/training-type/training goals --> 40/40/20
   if(userInput.exerciseLevel !== 'heavy' && userInput.exerciseDominance !== 'hybrid' 
     && userInput.goals !== 'gain_muscle' ) {
-      const split = "40% Protein, 40% Carbs, 40% Fats."
-      return split
+      const macroSplitStr = "40% Protein, 40% Carbs, 40% Fats."
+      const macroSplit = [0.4, 0.4, 0.2]
+      return { macroSplitStr, macroSplit }
   } else {
     console.log('error')
     return 1
   }
 }
 
+export function totalDailyIntake() {
+  // 
+}
+
 export function calculateMacroDominance(userInput) {
   // 
 }
 
-export function calculateActualMacros(userInput) {
-  //
+export function calculateActualMacros(macroSplit, dailyIntake) {
+  const proteinCalories = (macroSplit[0] * dailyIntake)
+  const carbsCalories = (macroSplit[1] * dailyIntake)
+  const fatsCalories = (macroSplit[2] * dailyIntake)
+
+  const proteinGrams = proteinCalories / 4
+  const carbsGrams = carbsCalories / 4
+  const fatsGrams = fatsCalories / 9
+
+  return [proteinGrams, carbsGrams, fatsGrams]
 }
