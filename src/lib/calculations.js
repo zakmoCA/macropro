@@ -49,6 +49,17 @@ export function totalDailyEnergyExpenditure(BMR, activityMultiplier) {
 export function calculateMacroSplit(userInput) {
   // start with 40/40/20 for typical user
   // as i refine my algo based on research extract functions
+
+  // macro logic will involve combinations like below, flesh out
+  // this is for relatively normal training/training-type/training goals --> 40/40/20
+  if(userInput.exerciseLevel !== 'heavy' && userInput.exerciseDominance !== 'hybrid' 
+    && userInput.goals !== 'gain_muscle' ) {
+      const split = "40% Protein, 40% Carbs, 40% Fats."
+      return split
+  } else {
+    console.log('error')
+    return 1
+  }
 }
 
 export function calculateMacroDominance(userInput) {
